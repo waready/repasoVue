@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main01</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-once>{{ name }}</h1>
+      <span> hi {{ returName() }} <a v-bind:href="anchor">https://www.google.com/</a></span>
+      
+
+      <input type="text" v-on:input="changeName">
+      <div v-html="link"></div>
+        <hr>
+        <input type="text" v-model="callName">
+        <div>{{ callName }}</div>
+
+        <div>
+            Computed message is {{ computedName }}
+        </div>
+        <div>
+           Second Computed message is {{ computedName }}
+        </div>
+        <div>
+            Normal function is {{ functionName }}
+        </div>
+        <div>
+            Second Normal function is {{ functionName }}
+        </div>
+
+        <div v-if="hello">
+            Hello Everyone!
+        </div>
+        <div> have a nice day!</div>
+        <template v-if="template">
+            <div>Div 1</div>
+            <div>Div 2</div>
+            <div>Div 3</div>
+        </template>
+        <div v-else>
+            holiya
+        </div>
+        <button @click="activar">activar</button>
+        <input type="text" v-model="nombre">
+        <br>
+        <hr>
+        <ul>
+            <li v-for="(key,value,index) in person">{{ index }} -- {{ value }} -- {{ key }}</li>
+        </ul>
+        <ul>
+            <template v-for='item in items'>
+             
+             <li v-for ="(key,value,index) in item">{{ index }} -- {{ value }} -- {{ key }}
+             </li>
+            </template>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
